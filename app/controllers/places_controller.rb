@@ -1,4 +1,5 @@
 class PlacesController < ApplicationController
+  # make sure there is a current user, we'll use the :authenticate_user! method from devise, but only on the :new, :edit, :create, :update and :destroy actions. 
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy ]
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
@@ -25,6 +26,7 @@ class PlacesController < ApplicationController
   # POST /places
   # POST /places.json
   def create
+    #assign the @place variable to be constructed by calling current_user.places.new
     @place = current_user.places.new(place_params)
 
     respond_to do |format|

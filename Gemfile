@@ -25,3 +25,6 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'gravatarify', '~> 3.0.0'
+
+#convert an address to longitude and latitude coordinates using a gem provided by alexreisner/geocoder
+gem 'geocoder'

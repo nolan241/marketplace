@@ -30,5 +30,31 @@
   <%= @place.user_id %>
 </p>
 
+<p>
+  <%= @place.longitude %>
+  <%= @place.latitude %>
+</p>
+
+<div id="map-canvas" style="width: 230px; height:230px"></div>
+
 <%= link_to 'Edit', edit_place_path(@place) %> |
 <%= link_to 'Back', places_path %>
+
+<!-- map script for displaying user coordinates  --> 
+<script type="text/javascript">
+
+  var map;
+  var myCenter = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
+
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+      center: myCenter,
+      zoom: 13
+    });
+    var marker = new google.maps.Marker({
+      position: myCenter, 
+      map: map, 
+    });
+  }
+</script>
+
