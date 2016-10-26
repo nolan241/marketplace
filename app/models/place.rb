@@ -10,4 +10,6 @@ class Place < ActiveRecord::Base
     # need to tell geocoded from which field too 'decode', and to ensure the :geocoded address is validated	
     geocoded_by :address 
 	after_validation :geocode 
+
+	has_many :reviews, dependent: :destroy	
 end

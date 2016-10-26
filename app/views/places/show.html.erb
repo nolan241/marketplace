@@ -22,7 +22,11 @@
 
   <div class="col-md-9">
     <h3>Reviews by People</h3>
+      <%= render 'reviews/form' %>
+    <h5>All reviews</h5>
+    <%= render @reviews %>    
   </div>
+  
 </div>
 
 <!-- map script for displaying user coordinates  --> 
