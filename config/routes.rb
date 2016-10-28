@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :places
   resources :reviews
+  
+  #when navogating to the /dashboard url look at the dashboard under the pages view
+  get 'dashboard', to: 'pages#dashboard'
   devise_for :users, controllers: { registrations: 'registrations'}
   root 'pages#home'  
 
