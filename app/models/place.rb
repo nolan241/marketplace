@@ -21,4 +21,14 @@ class Place < ActiveRecord::Base
 		rescue ZeroDivisionError
 		0
 	end
+	
+	#define search method for places. want to search the 'name' field and the 'address' field, so the SQL query will look like this
+	def self.search(search)
+		if search 
+			where(['name LIKE ? or address LIKE ?', "#{search}", "#{search}" ])
+		else
+			all
+		end
+	end
+	
 end

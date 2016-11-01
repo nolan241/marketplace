@@ -5,8 +5,10 @@ class PlacesController < ApplicationController
 
   # GET /places
   # GET /places.json
+  
+  #Show the Places that match the search params
   def index
-    @places = Place.all
+    @places = Place.search(params[:search])
   end
 
   # GET /places/1
