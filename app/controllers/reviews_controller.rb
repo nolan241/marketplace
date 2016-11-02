@@ -15,6 +15,7 @@ class ReviewsController <ApplicationController
     end
     
     def edit
+      @place = @review.place
     end
     
     def update
